@@ -49,10 +49,16 @@ namespace Infrastructure.Repository
            return entity;
         }
 
-        public  void Delete(int id)
+        public  T Delete(int id)
         {
            var entity =  _context.Set<T>().Find(id);
             _context.Set<T>().Remove(entity);
+            return entity;
+        }
+
+        public IEnumerable<T> get(Expression<Func<T, bool>> expression)
+        {
+            return _context.Set<T>().Where(expression).ToList(); 
         }
     }
 }

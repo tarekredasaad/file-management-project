@@ -24,6 +24,7 @@ namespace Infrastructure.Services
             {
                 Documents document = new Documents();
                 document.Name = documentDTO.Name;
+                document.UserId = documentDTO.userId;
                 document.CreatedDate = documentDTO.CreatedDate;
                 Priorities priorities = new Priorities();
                 priorities.Priority = documentDTO.PriorityLevel;
@@ -53,24 +54,60 @@ namespace Infrastructure.Services
 
         public async Task<ResultDTO> DeleteDocument(int id)
         {
-            if (id == 0)
+            try
             {
-                return new ResultDTO()
+                if (id == 0)
                 {
-                    StatusCode = 400,
-                    Data = null,
-                    Message = "Invalid operation "
+                    return new ResultDTO()
+                    {
+                        StatusCode = 400,
+                        Data = null,
+                        Message = "Invalid operation "
 
-                };
+                    };
+                }
+                else
+                {
+                    Documents document =  _unitOfWork.DocumentRepository.Delete(id);
+                    _unitOfWork.commit();
+                    Priorities priority = _unitOfWork.PriorityRepository.GetById(document.PriorityId);
+                    _unitOfWork.commit();
+                    string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "files", priority.Name);
+
+                    // Check if the file exists
+                    if (System.IO.File.Exists(filePath))
+                    {
+                        // Delete the file
+                        System.IO.File.Delete(filePath);
+
+                        //return Ok(new { Message = "File deleted successfully." });
+                        return new ResultDTO()
+                        {
+                            StatusCode = 200,
+                            Data = "your document is deleted",
+                            Message = "success operation "
+
+                        };
+                    }
+                    else
+                    {
+                        return new ResultDTO()
+                        {
+                            StatusCode = 400,
+                            Data = "Invalid operation",
+                            Message = "Invalid operation "
+
+                        };
+                    }
+                }
             }
-            else
+            catch (Exception ex)
             {
-                _unitOfWork.DocumentRepository.Delete(id);
-                _unitOfWork.commit();
+                // Log the exception or handle it as needed
                 return new ResultDTO()
                 {
-                    StatusCode = 200,
-                    Data = "your document is deleted",
+                    StatusCode = 500,
+                    Data =  new { Message = "An error occurred while deleting the file.", Error = ex.Message },
                     Message = "Invalid operation "
 
                 };
@@ -78,7 +115,7 @@ namespace Infrastructure.Services
         }
         public async Task<ResultDTO> GetDocument(int id)
         {
-           if(id == 0)
+            if (id == 0)
             {
                 return new ResultDTO()
                 {
@@ -93,19 +130,24 @@ namespace Infrastructure.Services
                 DocumentDTO documentDTO = new DocumentDTO();
                 Documents document = new Documents();
                 Priorities priority = new Priorities();
+                
+                
                 document = _unitOfWork.DocumentRepository.GetById(id);
                 _unitOfWork.commit();
-                priority=_unitOfWork.PriorityRepository.GetById(document.PriorityId);
+                priority = _unitOfWork.PriorityRepository.GetById(document.PriorityId);
                 _unitOfWork.commit();
-                documentDTO.PriorityName=priority.Name;
+                documentDTO.PriorityName = priority.Name;
                 documentDTO.PriorityLevel = priority.Priority;
-                documentDTO.File_Path=priority.File_Path;
-                documentDTO.Name=document.Name;
-                documentDTO.Id=document.Id;
-               
+                documentDTO.File_Path = priority.File_Path;
+                documentDTO.Name = document.Name;
+                documentDTO.Id = document.Id;
+                documentDTO.userId = document.UserId;
+                if(document.Due_Date != null)
+                {
+                    documentDTO.Due_Date = (DateTime)document.Due_Date;
+                }
 
-                documentDTO.Due_Date= (DateTime)document.Due_Date;
-               
+
                 return new ResultDTO()
                 {
                     StatusCode = 200,
@@ -115,6 +157,58 @@ namespace Infrastructure.Services
                 };
             }
         }
+        public async Task<ResultDTO> GetDocument(Guid userId, string name)
+        {
+           if(userId != null || string.IsNullOrEmpty(name))
+            {
+                return new ResultDTO()
+                {
+                    StatusCode = 400,
+                    Data = null,
+                    Message = "Invalid operation "
+
+                };
+            }
+            else
+            {
+                //DocumentDTO documentDTO = new DocumentDTO();
+                //Documents document = new Documents();
+                //Priorities priority = new Priorities();
+                List<DocumentDTO> documents = new List<DocumentDTO>();
+                List<Documents> Documents =  (List<Documents>)_unitOfWork.DocumentRepository
+                    .get(d => d.UserId == userId && d.Name == name);
+                _unitOfWork.commit();
+                foreach (Documents doc in Documents)
+                {
+                    DocumentDTO documentDTO = new DocumentDTO();
+                    Priorities priority = new Priorities();
+                    priority = _unitOfWork.PriorityRepository.GetById(doc.PriorityId);
+                    _unitOfWork.commit();
+                    documentDTO.PriorityName = priority.Name;
+                    documentDTO.PriorityLevel = priority.Priority;
+                    documentDTO.File_Path = priority.File_Path;
+                    documentDTO.Name = doc.Name;
+                    documentDTO.Id = doc.Id;
+                    if (doc.Due_Date != null)
+                    {
+                        documentDTO.Due_Date = (DateTime)doc.Due_Date;
+                    }
+
+                    documents.Add(documentDTO);
+                }
+                
+               
+                return new ResultDTO()
+                {
+                    StatusCode = 200,
+                    Data = documents,
+                    Message = "you get document successfully "
+
+                };
+            }
+        }
+
+        
 
         public async Task<ResultDTO> GetDocuments()
         {
@@ -142,7 +236,11 @@ namespace Infrastructure.Services
                 documentDTO.File_Path = priority.File_Path;
                 documentDTO.Name = document.Name;
                 documentDTO.Id = document.Id;
-                documentDTO.Due_Date = (DateTime)document.Due_Date;
+                if(document.Due_Date != null)
+                {
+                    documentDTO.Due_Date = (DateTime)document.Due_Date;
+                }
+
                 documents.Add(documentDTO);
             }
             return new ResultDTO()
@@ -161,6 +259,16 @@ namespace Infrastructure.Services
             document.Name = documentDTO.Name;
             document.Date = documentDTO.Date;
             priority.Priority = documentDTO.PriorityLevel;
+            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "files", priority.Name);
+
+            // Check if the file exists
+            if (System.IO.File.Exists(filePath))
+            {
+                // Delete the file
+                System.IO.File.Delete(filePath);
+
+                
+            }
             if (documentDTO.File_Path != null)
             {
                 priority.File_Path = FileHelper.UploadImg(documentDTO.File_Path, "Files");
@@ -177,5 +285,7 @@ namespace Infrastructure.Services
                 Message = "your document has been updated"
             };
         }
+
+       
     }
 }

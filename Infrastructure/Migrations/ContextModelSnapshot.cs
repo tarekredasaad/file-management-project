@@ -62,10 +62,10 @@ namespace Infrastructure.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("Date")
+                    b.Property<DateTime?>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("Due_Date")
+                    b.Property<DateTime?>("Due_Date")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
@@ -75,9 +75,14 @@ namespace Infrastructure.Migrations
                     b.Property<int>("PriorityId")
                         .HasColumnType("int");
 
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("Id");
 
                     b.HasIndex("PriorityId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Documents");
                 });
@@ -115,7 +120,15 @@ namespace Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Domain.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Priority");
+
+                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }

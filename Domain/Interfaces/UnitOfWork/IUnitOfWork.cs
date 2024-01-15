@@ -12,7 +12,6 @@ namespace Domain.Interfaces.UnitOfWork
         public IRepository<ApplicationUser> UserRepository { get; }
         public IRepository<Documents> DocumentRepository { get; }
         public IRepository<Priorities> PriorityRepository { get; }
-        public IRepository<Permission> PermissionRepository { get; }
         void commit();
     }
 }

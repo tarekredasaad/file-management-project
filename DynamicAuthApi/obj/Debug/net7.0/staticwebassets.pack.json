@@ -61,6 +61,10 @@
       "PackagePath": "staticwebassets\\Files\\61441f98-614f-4f4c-b7ba-26bdb2c49739CV English - Moaaz2.docx"
     },
     {
+      "Id": "D:\\streamsForTechnology Task\\DynamicAuthProject\\DynamicAuthApi\\wwwroot\\Files\\78773f27-bc1f-498f-a7f0-a9efe258b310RE4wEaB.jpg",
+      "PackagePath": "staticwebassets\\Files\\78773f27-bc1f-498f-a7f0-a9efe258b310RE4wEaB.jpg"
+    },
+    {
       "Id": "D:\\streamsForTechnology Task\\DynamicAuthProject\\DynamicAuthApi\\wwwroot\\Files\\7faf401d-55b7-491d-9178-0f1574bcc0dbRE4wwtz.jpg",
       "PackagePath": "staticwebassets\\Files\\7faf401d-55b7-491d-9178-0f1574bcc0dbRE4wwtz.jpg"
     },
@@ -121,6 +125,10 @@
       "PackagePath": "staticwebassets\\Files\\c40cbb7d-90f7-4ee5-9c49-bb5e283099aeCV English - Moaaz.docx"
     },
     {
+      "Id": "D:\\streamsForTechnology Task\\DynamicAuthProject\\DynamicAuthApi\\wwwroot\\Files\\cbc4d5a0-c8ca-4fc6-bb8c-1c6a5aed0923RE4wE9C.jpg",
+      "PackagePath": "staticwebassets\\Files\\cbc4d5a0-c8ca-4fc6-bb8c-1c6a5aed0923RE4wE9C.jpg"
+    },
+    {
       "Id": "D:\\streamsForTechnology Task\\DynamicAuthProject\\DynamicAuthApi\\wwwroot\\Files\\e042e840-2ddc-43f0-b549-25c60c9bb0a4CV English - Moaaz.docx",
       "PackagePath": "staticwebassets\\Files\\e042e840-2ddc-43f0-b549-25c60c9bb0a4CV English - Moaaz.docx"
     },
@@ -135,6 +143,10 @@
     {
       "Id": "D:\\streamsForTechnology Task\\DynamicAuthProject\\DynamicAuthApi\\wwwroot\\Files\\fb8bffdd-08ae-41f2-bb11-24e8e5a0f7b8RE4wtcN.jpg",
       "PackagePath": "staticwebassets\\Files\\fb8bffdd-08ae-41f2-bb11-24e8e5a0f7b8RE4wtcN.jpg"
+    },
+    {
+      "Id": "D:\\streamsForTechnology Task\\DynamicAuthProject\\DynamicAuthApi\\wwwroot\\Files\\fc4dc0ad-b4f6-4147-95b8-a2f5839f1583RE4wEaB.jpg",
+      "PackagePath": "staticwebassets\\Files\\fc4dc0ad-b4f6-4147-95b8-a2f5839f1583RE4wEaB.jpg"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.FileManagementApi.Microsoft.AspNetCore.StaticWebAssets.props",

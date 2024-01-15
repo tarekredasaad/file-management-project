@@ -23,9 +23,6 @@ namespace Modules.ECommerce.Application.Helper
 
         }
 
-        //public static string fileName()
-        //{
-
-        //}
+        
     }
 }

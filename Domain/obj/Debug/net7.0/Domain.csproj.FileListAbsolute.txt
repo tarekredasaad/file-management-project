@@ -22,3 +22,4 @@ D:\streamsForTechnology Task\DynamicAuthProject\Domain\obj\Debug\net7.0\Domain.d
 D:\streamsForTechnology Task\DynamicAuthProject\Domain\obj\Debug\net7.0\refint\Domain.dll
 D:\streamsForTechnology Task\DynamicAuthProject\Domain\obj\Debug\net7.0\Domain.pdb
 D:\streamsForTechnology Task\DynamicAuthProject\Domain\obj\Debug\net7.0\ref\Domain.dll
+D:\streamsForTechnology Task\DynamicAuthProject\Domain\obj\Debug\net7.0\Domain.sourcelink.json

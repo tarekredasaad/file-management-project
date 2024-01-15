@@ -13,6 +13,10 @@ namespace Domain.Models
         public string Name { get; set; }
         public DateTime? Date { get; set; }
         public DateTime CreatedDate { get; set; }
+        [ForeignKey("User")]
+        public Guid UserId { get; set; }
+        public ApplicationUser User { get; set; }
+
         [ForeignKey("Priority")]
         public int PriorityId { get; set; }
         public Priorities Priority { get; set; }

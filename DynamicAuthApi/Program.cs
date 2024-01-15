@@ -36,7 +36,7 @@ namespace DynamicAuthApi
             //builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
             //    .AddEntityFrameworkStores<Context>().AddSignInManager<SignInManager<ApplicationUser>>();
             //;
-            builder.Services.AddTransient< UnAuthorized>();
+            builder.Services.AddTransient< CustomMiddleWare>();
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
             builder.Services.AddScoped<IAuthService, AuthService>();
             //builder.Services.AddScoped<IRoleService, RoleService>();
@@ -70,7 +70,7 @@ namespace DynamicAuthApi
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-            app.UseMiddleware<UnAuthorized>();
+            app.UseMiddleware<CustomMiddleWare>();
             app.UseRouting();
             app.UseStaticFiles();
             app.UseHttpsRedirection();

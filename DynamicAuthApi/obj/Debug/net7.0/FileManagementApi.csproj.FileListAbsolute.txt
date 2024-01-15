@@ -91,3 +91,4 @@ D:\streamsForTechnology Task\DynamicAuthProject\DynamicAuthApi\obj\Debug\net7.0\
 D:\streamsForTechnology Task\DynamicAuthProject\DynamicAuthApi\obj\Debug\net7.0\FileManagementApi.pdb
 D:\streamsForTechnology Task\DynamicAuthProject\DynamicAuthApi\obj\Debug\net7.0\FileManagementApi.genruntimeconfig.cache
 D:\streamsForTechnology Task\DynamicAuthProject\DynamicAuthApi\obj\Debug\net7.0\ref\FileManagementApi.dll
+D:\streamsForTechnology Task\DynamicAuthProject\DynamicAuthApi\obj\Debug\net7.0\FileManagementApi.sourcelink.json

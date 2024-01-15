@@ -15,8 +15,9 @@ namespace Domain.Interfaces.Repository
         //public T GetByEmail(string email);
         //public T Get(string word);
         public IEnumerable<T> GetAll();
+        public IEnumerable<T> get(Expression<Func<T, bool>> expression);
         public T Update(T entity);
-        public void Delete(int id);
+        public T Delete(int id);
         public T Create(T entity);
     }
 }

@@ -32,3 +32,4 @@ D:\streamsForTechnology Task\DynamicAuthProject\Infrastructure\obj\Debug\net7.0\
 D:\streamsForTechnology Task\DynamicAuthProject\Infrastructure\obj\Debug\net7.0\Infrastructure.pdb
 D:\streamsForTechnology Task\DynamicAuthProject\Infrastructure\obj\Debug\net7.0\Infrastructure.genruntimeconfig.cache
 D:\streamsForTechnology Task\DynamicAuthProject\Infrastructure\obj\Debug\net7.0\ref\Infrastructure.dll
+D:\streamsForTechnology Task\DynamicAuthProject\Infrastructure\obj\Debug\net7.0\Infrastructure.sourcelink.json

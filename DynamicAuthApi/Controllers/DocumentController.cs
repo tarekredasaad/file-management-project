@@ -86,26 +86,7 @@ namespace DynamicAuthApi.Controllers
             // For simplicity, this example assumes everything is an application/octet-stream
             return "application/octet-stream";
         }
-        //[Authorize(Policy = "CanEditdocument")]
-        //[HttpPut]
-        //public ActionResult update(documentDTO documentDTO , int id) 
-        //{
-        //    ////document document = unitOfWork.documentRepository.GetById(id);
-        //    //document.price = documentDTO.price;
-        //    //document.name = documentDTO.name;
-        //    ////unitOfWork.documentRepository.Update(document);
-        //    //unitOfWork.commit();
-        //    return Ok(document);
-        //}
-
-        //[Authorize(Policy = "CanDeletedocument")]
-        //[HttpDelete]
-        //public ActionResult Delete(int id)
-        //{
-        //    unitOfWork.documentRepository.Delete(id);
-        //    unitOfWork.commit();
-        //    return Ok("document has been deleted");
-        //}
+        
 
 
     }

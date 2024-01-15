@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Hyki3eGoBuqYakW5mM356KOXIiC4XJKAqlB7ngO8/Uw=",
+  "Hash": "zsooVqcJSj42Dau63eoETA0j7106IEwhZVAN71446Fc=",
   "Source": "FileManagementApi",
   "BasePath": "_content/FileManagementApi",
   "Mode": "Default",
@@ -302,6 +302,25 @@
       "OriginalItemSpec": "wwwroot\\Files\\61441f98-614f-4f4c-b7ba-26bdb2c49739CV English - Moaaz2.docx"
     },
     {
+      "Identity": "D:\\streamsForTechnology Task\\DynamicAuthProject\\DynamicAuthApi\\wwwroot\\Files\\78773f27-bc1f-498f-a7f0-a9efe258b310RE4wEaB.jpg",
+      "SourceId": "FileManagementApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\streamsForTechnology Task\\DynamicAuthProject\\DynamicAuthApi\\wwwroot\\",
+      "BasePath": "_content/FileManagementApi",
+      "RelativePath": "Files/78773f27-bc1f-498f-a7f0-a9efe258b310RE4wEaB.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Files\\78773f27-bc1f-498f-a7f0-a9efe258b310RE4wEaB.jpg"
+    },
+    {
       "Identity": "D:\\streamsForTechnology Task\\DynamicAuthProject\\DynamicAuthApi\\wwwroot\\Files\\7faf401d-55b7-491d-9178-0f1574bcc0dbRE4wwtz.jpg",
       "SourceId": "FileManagementApi",
       "SourceType": "Discovered",
@@ -587,6 +606,25 @@
       "OriginalItemSpec": "wwwroot\\Files\\c40cbb7d-90f7-4ee5-9c49-bb5e283099aeCV English - Moaaz.docx"
     },
     {
+      "Identity": "D:\\streamsForTechnology Task\\DynamicAuthProject\\DynamicAuthApi\\wwwroot\\Files\\cbc4d5a0-c8ca-4fc6-bb8c-1c6a5aed0923RE4wE9C.jpg",
+      "SourceId": "FileManagementApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\streamsForTechnology Task\\DynamicAuthProject\\DynamicAuthApi\\wwwroot\\",
+      "BasePath": "_content/FileManagementApi",
+      "RelativePath": "Files/cbc4d5a0-c8ca-4fc6-bb8c-1c6a5aed0923RE4wE9C.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Files\\cbc4d5a0-c8ca-4fc6-bb8c-1c6a5aed0923RE4wE9C.jpg"
+    },
+    {
       "Identity": "D:\\streamsForTechnology Task\\DynamicAuthProject\\DynamicAuthApi\\wwwroot\\Files\\e042e840-2ddc-43f0-b549-25c60c9bb0a4CV English - Moaaz.docx",
       "SourceId": "FileManagementApi",
       "SourceType": "Discovered",
@@ -661,6 +699,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Files\\fb8bffdd-08ae-41f2-bb11-24e8e5a0f7b8RE4wtcN.jpg"
+    },
+    {
+      "Identity": "D:\\streamsForTechnology Task\\DynamicAuthProject\\DynamicAuthApi\\wwwroot\\Files\\fc4dc0ad-b4f6-4147-95b8-a2f5839f1583RE4wEaB.jpg",
+      "SourceId": "FileManagementApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\streamsForTechnology Task\\DynamicAuthProject\\DynamicAuthApi\\wwwroot\\",
+      "BasePath": "_content/FileManagementApi",
+      "RelativePath": "Files/fc4dc0ad-b4f6-4147-95b8-a2f5839f1583RE4wEaB.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Files\\fc4dc0ad-b4f6-4147-95b8-a2f5839f1583RE4wEaB.jpg"
     }
   ]
 }

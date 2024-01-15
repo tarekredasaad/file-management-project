@@ -20,7 +20,6 @@ namespace Infrastructure.UnitOfWork
         public IRepository<Documents> DocumentRepository { get; private set; }
         public IRepository<Priorities> PriorityRepository { get; private set; }
 
-        public IRepository<Permission> PermissionRepository { get; private set; }
 
 
 
@@ -32,7 +31,6 @@ namespace Infrastructure.UnitOfWork
             UserRepository = new Repository<ApplicationUser>(Context);
             DocumentRepository = new Repository<Documents>(Context);
             PriorityRepository = new Repository<Priorities>(Context);
-            PermissionRepository = new Repository<Permission>(Context);
 
         }
         public void commit() 

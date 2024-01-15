@@ -10,7 +10,8 @@ namespace Domain.DTO
     public class AddDocumentDTO
     {
         public string Name { get; set; }
-        //public string PriorityName { get; set; }
+        public Guid userId { get; set; }
+
         public string PriorityLevel { get; set; }
         public IFormFile? File_Path { get; set; }
         public DateTime CreatedDate = DateTime.Now;

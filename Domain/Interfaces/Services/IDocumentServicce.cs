@@ -14,7 +14,8 @@ namespace Domain.Interfaces.Services
         Task<ResultDTO> UpdateDocument( UpdateDocumentDTO documentDTO);
         Task<ResultDTO> GetDocuments();
         //Task<ResultDTO> updateDocuments(int id,AddDocumentDTO addDocumentDTO);
-        Task<ResultDTO> GetDocument(int id);
+        Task<ResultDTO> GetDocument(Guid userId,string name );
+        Task<ResultDTO> GetDocument(int id );
         Task<ResultDTO> DeleteDocument(int id);
 
     }
