@@ -68,17 +68,22 @@ namespace Infrastructure.Services
                 }
                 else
                 {
-                    Documents document =  _unitOfWork.DocumentRepository.Delete(id);
+                    Documents document =  _unitOfWork.DocumentRepository.GetById(id);
                     _unitOfWork.commit();
                     Priorities priority = _unitOfWork.PriorityRepository.GetById(document.PriorityId);
                     _unitOfWork.commit();
                     string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "files", priority.Name);
-
+                     document = _unitOfWork.DocumentRepository.Delete(id);
+                    _unitOfWork.commit();
+                        _unitOfWork.PriorityRepository.Delete(document.PriorityId);
+                        _unitOfWork.commit();
                     // Check if the file exists
                     if (System.IO.File.Exists(filePath))
                     {
                         // Delete the file
                         System.IO.File.Delete(filePath);
+
+
 
                         //return Ok(new { Message = "File deleted successfully." });
                         return new ResultDTO()
